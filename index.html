@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App</title>
+</head>
+<body>
+    <h1>Моя Web App</h1>
+    <button id="sendData">Отправить данные</button>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+
+        document.getElementById('sendData').addEventListener('click', function () {
+            tg.sendData(JSON.stringify({ message: "Привет из Web App!" }));
+        });
+
+        tg.expand();
+    </script>
+</body>
+</html>
